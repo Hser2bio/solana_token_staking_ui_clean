@@ -196,8 +196,8 @@ export const batchRequestStakeReceipts = async (
 };
 
 export const constants = {
-    stakeToken: "ErNQeVLdwxNrPXNT1FChKHfebMebSDYmNqw2yTfP35En",
-    nonce: 6,
+    stakeToken: "C3R65zAxLrR3B1jJ1A5x4rA3vPCHPQj2KSQ6x9wcPkW",
+    nonce: 1,
     rewardPoolIndex: 0,
-    admin: "4tA96kqx4hb2rCcriPHU5DNwNxuNFJyRbp93R5yNLq8J",
+    admin: "B4L4uRG8ocJfhSxby4UqEHgCTaNyjuUyDHuQCjeD4f4f",
 };

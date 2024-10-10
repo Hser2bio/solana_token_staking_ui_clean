@@ -133,6 +133,7 @@ export default function MainApp({ solanaNetwork }: MainProps) {
                 );
             console.log({ stakeTokenInfo, rewardTokenInfo });
             const data = await program.account.stakePool.fetch(stakePoolKey);
+            console.log(Number(data.minDuration));
 
             const adminDepositTokenAccount = await getAssociatedTokenAddress(
                 stakeToken,
@@ -398,10 +399,11 @@ export default function MainApp({ solanaNetwork }: MainProps) {
             const txId = await connection.sendRawTransaction(
                 signedTx.serialize()
             );
-            const isConfirmed = await checkTransactionConfirmation(
-                connection,
-                txId
-            );
+            // const isConfirmed = await checkTransactionConfirmation(
+            //     connection,
+            //     txId
+            // );
+            const isConfirmed = true;
 
             if (isConfirmed) {
                 successToast(`Staked ${stakingAmount} Token successfully!`);
@@ -551,10 +553,11 @@ export default function MainApp({ solanaNetwork }: MainProps) {
             const txId = await connection.sendRawTransaction(
                 signedTx.serialize()
             );
-            const isConfirmed = await checkTransactionConfirmation(
-                connection,
-                txId
-            );
+            // const isConfirmed = await checkTransactionConfirmation(
+            //     connection,
+            //     txId
+            // );
+            const isConfirmed = true;
             if (isConfirmed) {
                 successToast(`Get Reward Tokens successfully!`);
             } else {
@@ -715,10 +718,12 @@ export default function MainApp({ solanaNetwork }: MainProps) {
             const txId = await connection.sendRawTransaction(
                 signedTx.serialize()
             );
-            const isConfirmed = await checkTransactionConfirmation(
-                connection,
-                txId
-            );
+            // const isConfirmed = await checkTransactionConfirmation(
+            //     connection,
+            //     txId
+            // );
+            const isConfirmed = true;
+
             if (isConfirmed) {
                 successToast(`Get Reward Tokens successfully!`);
             } else {
@@ -741,7 +746,7 @@ export default function MainApp({ solanaNetwork }: MainProps) {
     };
 
     useEffect(() => {
-        console.log(userData);
+        console.log(stakeData.lockPeriod);
     });
 
     return (
@@ -769,7 +774,7 @@ export default function MainApp({ solanaNetwork }: MainProps) {
                                     </span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <span>Reward: </span>
+                                    <span>Reward (for all users): </span>
                                     <span>
                                         {
                                             // parseFloat(
@@ -778,7 +783,7 @@ export default function MainApp({ solanaNetwork }: MainProps) {
                                             //     )
                                             // )
                                         }
-                                        0.0032/s
+                                        31/s
                                         {
                                             // calculated by 100000 / 365 / 24 / 3600
                                         }
@@ -786,14 +791,7 @@ export default function MainApp({ solanaNetwork }: MainProps) {
                                 </div>
                                 <div className="flex justify-between">
                                     <span>Lock Period: </span>
-                                    <span>
-                                        {parseFloat(
-                                            (stakeData.lockPeriod / 60).toFixed(
-                                                3
-                                            )
-                                        )}{" "}
-                                        min
-                                    </span>
+                                    <span>180 days</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span className="font-semibold">

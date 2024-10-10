@@ -21,10 +21,12 @@ export default function WalletContextProvider({
     children: React.ReactNode;
     solanaNetwork: SolanaNetworkType;
 }) {
-    const endpoint = useMemo(
-        () => clusterApiUrl(solanaNetwork),
-        [solanaNetwork]
-    );
+    // const endpoint = useMemo(
+    //     () => clusterApiUrl(solanaNetwork),
+    //     [solanaNetwork]
+    // );
+    const endpoint =
+        "https://young-capable-energy.solana-mainnet.quiknode.pro/cfa2d247b256f715b686dd61c92248b784dbdfc3";
 
     const wallets = useMemo(
         () => [
