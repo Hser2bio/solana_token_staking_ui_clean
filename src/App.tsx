@@ -11,7 +11,7 @@ export type SolanaNetworkType = "mainnet-beta" | "devnet";
 
 function App() {
     const [solanaNetwork, setSolanaNetwork] =
-        useState<SolanaNetworkType>("devnet");
+        useState<SolanaNetworkType>("mainnet-beta");
 
     useEffect(() => {
         if (solanaNetwork) {
