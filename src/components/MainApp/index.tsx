@@ -753,10 +753,10 @@ export default function MainApp({ solanaNetwork }: MainProps) {
         <main className="main flex justify-center">
             <div className="2xl:w-[80vw] w-[96vw]">
                 <h1 className="heading-1 my-4 sm:px-4 text-4xl text-center">
-                    Welcome to Our Platform!
+                    Welcome to Sammy Stake Platform!
                 </h1>
                 <h2 className="heading-1 my-4 sm:px-3 text-xl text-center">
-                    Our Platfrom will give the rich rewards for staker.
+                    Our Plataform will give one billion as rewards to stakers in one year.
                     <br /> Let's enjoy and get passive Income.
                 </h2>
                 {publicKey ? (
